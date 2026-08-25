@@ -3,6 +3,7 @@ package kanan;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -28,6 +29,11 @@ public class Main {
 
         List<Student> filteredStudents = students.stream().filter(student1 -> student.getGpa() > 3.0).collect(Collectors.toList());
         System.out.println("Filtered students: " + filteredStudents);
+
+
+        System.out.println(findBySubject(students, "Calculus-1"));
+
+
 
     }
     public static void showStudents(List<Student> students){
@@ -68,6 +74,13 @@ public class Main {
         if (!found) {
             System.out.println("Student with ID " + targetId + " not found. Cannot update subjects.");
         }
+    }
+
+    public static List<Student> findBySubject(List<Student> students, String subject) {
+        Predicate<Student> subjectFilter = s -> s.getSubjects().contains(subject);
+        return students.stream()
+                .filter(subjectFilter)
+                .collect(Collectors.toList());
     }
 
 
