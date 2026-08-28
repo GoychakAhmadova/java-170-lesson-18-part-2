@@ -1,6 +1,5 @@
 package sahiba;
 
-import javax.security.auth.Subject;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,8 +7,7 @@ import java.util.List;
 public class StudentService {
     public StudentService() {
     }
-    public static void main(String[] args) {
-    }
+
     List<Student> students = new ArrayList<>();
 
     public void insertStudent(Student student){
@@ -41,6 +39,14 @@ public class StudentService {
                students.get(i).setSubject(subjects);
             }
         }
+    }
+
+    public List<Student> filterByGpa(int minGpa){
+        return students.stream().filter(student -> student.getGpa()>= minGpa ).toList();
+    }
+
+    public List<Student> filterBySubjects(String subject){
+        return students.stream().filter(students -> students.getSubject().contains(subject)).toList();
     }
 }
 
