@@ -1,6 +1,5 @@
 package shamil;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class StudentService {
@@ -23,7 +22,7 @@ public class StudentService {
         students.removeIf(student -> student.getId() == id);
     }
 
-    public void updateSubjects(int id, List<String> subjects) {
+    public void updateSubjects(int id, List<Subject> subjects) {
         students.stream()
                 .filter(student -> student.getId() == id)
                 .findFirst()
@@ -36,10 +35,11 @@ public class StudentService {
                 .toList();
     }
 
-    public List<Student> findBySubject(String subject) {
+    public List<Student> findBySubject(String subjectName) {
         return students.stream()
-                .filter(student -> student.getSubjects().contains(subject))
+                .filter(student -> student.getSubjects().stream()
+                        .anyMatch(subject ->
+                                subject.getName().equalsIgnoreCase(subjectName)))
                 .toList();
     }
-
 }
