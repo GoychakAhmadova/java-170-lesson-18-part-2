@@ -18,10 +18,8 @@ public class Student {
     public void setId(int id) { this.id = id; }
 
     public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
 
     public double getGpa() { return gpa; }
-    public void setGpa(double gpa) { this.gpa = gpa; }
 
     public List<String> getSubjects() { return subjects; }
     public void setSubjects(List<String> subjects) { this.subjects = subjects; }
