@@ -8,9 +8,9 @@ public class Student {
     private int id;
     private String name;
     private double gpa;
-    private List<String> subjects;
+    private List<Subject> subjects;
 
-    public Student(int id, String name, double gpa, List<String> subjects) {
+    public Student(int id, String name, double gpa, List<Subject> subjects) {
         this.id = id;
         this.name = name;
         this.gpa = gpa;
@@ -29,11 +29,11 @@ public class Student {
         return gpa;
     }
 
-    public List<String> getSubjects() {
+    public List<Subject> getSubjects() {
         return subjects;
     }
 
-    public void setSubjects(List<String> subjects) {
+    public void setSubjects(List<Subject> subjects) {
         this.subjects = new ArrayList<>(subjects);
     }
 
