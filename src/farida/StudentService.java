@@ -1,6 +1,7 @@
 package farida;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class StudentService {
@@ -38,5 +39,20 @@ public class StudentService {
         }
         System.out.println("Student not found.");
     }
+
+
+  //  Lambda 1:
+public static List<Student> filterByGpa(double minGpa) {
+    return students.stream()
+            .filter(student -> student.getGpa() >= minGpa)
+            .collect(Collectors.toList());
+}
+
+// Lambda 2:
+public static List<Student> findBySubject(String subject) {
+    return students.stream()
+            .filter(student -> student.getSubjects().contains(subject))
+            .collect(Collectors.toList());
+}
 
 }
