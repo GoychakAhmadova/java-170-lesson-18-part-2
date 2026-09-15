@@ -1,6 +1,5 @@
-package lesson18part2;
+package sahiba;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Student {
@@ -9,7 +8,7 @@ public class Student {
     double gpa;
     List<String> subjects;
 
-    public Student(int gpa, int id, String name, List<String> subjects) {
+    public Student(double gpa, int id, String name, List<String> subjects) {
         this.gpa = gpa;
         this.id = id;
         this.name = name;
@@ -20,30 +19,13 @@ public class Student {
         return gpa;
     }
 
-    public void setGpa(double gpa) {
-        this.gpa = gpa;
-    }
-
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public List<String> getSubject() {
         return subjects;
     }
-
     public void setSubject(List<String> subject) {
         this.subjects = subject;
     }
@@ -56,8 +38,6 @@ public class Student {
                 ", gpa=" + gpa +
                 ", subjects=" + subjects +
                 '}';
-
-
     }
 }
 
