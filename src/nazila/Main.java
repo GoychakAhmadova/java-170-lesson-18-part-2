@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class main {
+public class Main {
 
     private static List<Student> students = new ArrayList<>();
 
@@ -25,6 +25,20 @@ public class main {
         System.out.println("Delete Student: ");
 
         deleteStudentById(2);
+
+        System.out.println("GPA 70-den yuksek olanlar: ");
+        double score = 70.0;
+
+        students.stream()
+                .filter(student -> student.getGpa() >= score)
+                .forEach(System.out::println);
+
+        System.out.println("Fenne gore: ");
+        String subject = "Edebiyyat";
+
+        students.stream()
+                .filter(student -> student.getSubjects().contains(subject) )
+                .forEach(System.out::println);
 
 
     }
